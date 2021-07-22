@@ -1,14 +1,14 @@
 package br.com.localiza
 
-abstract class  Animal {
+abstract class Animal {
 
 }
 
-class  Gato:Animal(){}
-class  Cachorro:Animal(){}
+class Gato : Animal() {}
+class Cachorro : Animal() {}
 
 class MaeDePet {
-    var meusPets:Array<Animal?> = Array(5){null}
+    var meusPets: Array<Animal?> = Array(5) { null }
 }
 
 //when
