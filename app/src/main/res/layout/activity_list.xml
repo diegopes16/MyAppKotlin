@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
+
+
     <TextView
         android:id="@+id/listaFilmesTitulo"
         android:layout_width="match_parent"
@@ -17,14 +19,17 @@
         android:textStyle="bold"
         android:layout_marginTop="10sp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/moviesListItens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/listaFilmesTitulo"
-        app:layout_constraintStart_toStartOf="@id/listaFilmesTitulo"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@id/listaFilmesTitulo"
+        app:layout_constraintTop_toBottomOf="@id/listaFilmesTitulo"
         tools:itemCount="10"
         tools:listitem="@layout/movie_item"
         />

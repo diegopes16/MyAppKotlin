@@ -14,129 +14,138 @@
             type="String" />
     </data>
 
-
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f5f2ff"
-    tools:context=".MainActivity">
-
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#999999"
-        app:layout_constraintBottom_toBottomOf="@id/genero_title"
-        app:layout_constraintEnd_toEndOf="@id/duracao"
-        app:layout_constraintStart_toStartOf="@id/genero_title"
-        app:layout_constraintTop_toTopOf="@id/genero_title" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/poster_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/poster_id"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/loki_logo" />
+        android:background="#f5f2ff"
+        tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="15dp"
-        android:text="@string/title"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/poster_id"
-        app:layout_constraintTop_toBottomOf="@id/poster_id" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="15dp"
-        android:paddingBottom="5dp"
-        android:text="@string/ano"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@id/title"
-        app:layout_constraintStart_toEndOf="@id/title" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/poster_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/poster_id"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/loki_logo" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/sinopse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Sinopse:"
-        android:textColor="@color/black"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/title"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/poster_id"
+            app:layout_constraintTop_toBottomOf="@id/poster_id" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/texto_sinopse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="20dp"
-        android:justificationMode="inter_word"
-        android:text="@string/sinopse"
-        android:textColor="#032104"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/sinopse"
-        app:layout_constraintTop_toBottomOf="@id/sinopse" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/ano"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintStart_toEndOf="@id/title" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/genero_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:padding="3dp"
-        android:text="Genêro: "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sinopse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sinopse:"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/genero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="3dp"
-        android:text="@string/genero"
-        android:textColor="#032104"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/genero_title"
-        app:layout_constraintStart_toEndOf="@id/genero_title" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/texto_sinopse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:justificationMode="inter_word"
+            android:text="@string/sinopse"
+            android:textColor="#032104"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sinopse"
+            app:layout_constraintTop_toBottomOf="@id/sinopse" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/duracao_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="3dp"
-        android:text="Duração: "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/genero"
-        app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/genero_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:padding="3dp"
+            android:text="Genêro: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
 
-    <TextView
-        android:id="@+id/duracao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="3dp"
-        android:text="@string/duracao"
-        android:textColor="#032104"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/duracao_title"
-        app:layout_constraintStart_toEndOf="@id/duracao_title" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="@string/genero"
+            android:textColor="#032104"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/genero_title"
+            app:layout_constraintStart_toEndOf="@id/genero_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/duracao_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Duração: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/genero"
+            app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
+
+        <TextView
+            android:id="@+id/duracao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="@string/duracao"
+            android:textColor="#032104"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/duracao_title"
+            app:layout_constraintStart_toEndOf="@id/duracao_title" />
+
+        <Button
+            android:id="@+id/botao_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VOLTAR"
+            android:background="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/duracao"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="10sp"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

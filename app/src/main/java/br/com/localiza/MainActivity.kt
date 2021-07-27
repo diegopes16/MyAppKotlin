@@ -8,22 +8,22 @@ import br.com.localiza.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var bindingmain: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+            bindingmain = ActivityMainBinding.inflate(layoutInflater)
+            val view = bindingmain.root
+            setContentView(view)
 
+        bindingmain.botaoVoltar.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
+        }
 
- fun openDetailsActivity(id:Int){
-    val intent = Intent(this,DetailsActivity::class.java)
-        //.apply {
-        //putExtra(DetailsActivity.EXTRA_ID,id)
-    //}
-    startActivity(intent)
-}
-
+//            bindingmain.posterId.setOnClickListener {
+//                val intent = Intent(this, ListActivity::class.java)
+//                startActivity(intent)
+//            }
+        }
     }
- }

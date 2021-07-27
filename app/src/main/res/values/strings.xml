@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">My App</string>
+    <string name="app_name">Diego Movies</string>
     <string name="saudacao">Olá Tudo Bem ?</string>
     <string name="title">Loki</string>
     <string name="ano">2021</string>
     <string name="genero">Aventura</string>
     <string name="sinopse">Em Loki, o imprevisível vilão Loki (Hiddleston) retorna como o Deus da Trapaça em uma nova série que se passa após os acontecimentos de Vingadores: Ultimato.</string>
     <string name="duracao">1h10min</string>
+    <string name="movieposter">MoviePoster</string>
 </resources>
