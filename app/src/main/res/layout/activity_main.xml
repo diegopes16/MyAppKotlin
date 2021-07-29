@@ -84,7 +84,7 @@
             app:layout_constraintStart_toStartOf="@id/sinopse"
             app:layout_constraintTop_toBottomOf="@id/sinopse" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/genero_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
             app:layout_constraintStart_toStartOf="@+id/title"
             app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/genero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="@id/genero_title"
             app:layout_constraintStart_toEndOf="@id/genero_title" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/duracao_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
