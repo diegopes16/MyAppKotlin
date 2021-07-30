@@ -1,4 +1,4 @@
-package br.com.localiza
+package br.com.localiza.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -1,9 +1,12 @@
-package br.com.localiza
+package br.com.localiza.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.localiza.databinding.ActivityListBinding
+import br.com.localiza.model.MovieList
+import br.com.localiza.model.MovieModel
+import br.com.localiza.model.MovieRepository
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
@@ -16,24 +19,23 @@ class ListActivity : AppCompatActivity() {
         setupList()
 
     }
-    private fun initLayout(){
+
+    private fun initLayout() {
         binding = ActivityListBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
     }
 
-    private fun setupList(){
+    private fun setupList() {
         val adapterMovie = MovieAdapter {
             val details = Intent(this, MainActivity::class.java)
             startActivity(details)
         }
         binding.moviesListItens.adapter = adapterMovie
-        val list:List<String> = List(10){
-            "Loki ${it}"
+        MovieRepository.getPopular { list ->
+            adapterMovie.addItemList(list)
         }
-        adapterMovie.addItemList(list)
     }
-
 }
 
 

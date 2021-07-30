@@ -1,13 +1,20 @@
-package br.com.localiza
+package br.com.localiza.model
 
-import br.com.localiza.ApiConsts.API_KEY
+import br.com.localiza.model.ApiConsts.API_KEY
+import br.com.localiza.model.ApiConsts.PATH_MOVIE_ID
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface TheMoviesApi {
 
     @GET("3/movie/popular?api_key=${API_KEY}&language=en-US&page=1")
     fun listPopular(): Call<MovieList>
+
+
+    @GET("{id}?api_key=${ApiConsts.API_KEY}&language=en-US&page=1")
+    fun getMovieById(@Path(PATH_MOVIE_ID) id:Int): Call<MovieModel>
+
 
 }
 
@@ -20,9 +27,3 @@ object ApiConsts {
 
 class MovieList(val page: Int, val results: List<MovieModel>)
 
-data class MovieModel(
-    val title: String,
-    val id: Int,
-    val poster_path: String,
-    val overview: String
-) // colocar em arquivo diferente e adicionar resultados que vao vim da api
