@@ -16,6 +16,8 @@ class ListActivity : AppCompatActivity() {
 
         setupList()
 
+        setupListTop()
+
     }
 
     private fun initLayout() {
@@ -30,12 +32,19 @@ class ListActivity : AppCompatActivity() {
             startActivity(details)
         }
         binding.popularMoviesListItens.adapter = adapterMovie
-        MovieRepository.getPopular { listpop ->
-            adapterMovie.addItemList(listpop)
+        MovieRepository.getPopular { listPopular ->
+            adapterMovie.addItemList(listPopular)
         }
-        binding.topRatedMoviesListItens.adapter = adapterMovie
-        MovieRepository.topRated { listtop ->
-            adapterMovie.addItemList(listtop)
+    }
+
+    private fun setupListTop() {
+        val adapterMovie2 = MovieAdapter {
+            val details = Intent(this, DetailsActivity::class.java)
+            startActivity(details)
+        }
+        binding.topRatedMoviesListItens.adapter = adapterMovie2
+        MovieRepository.topRated { listTop ->
+            adapterMovie2.addItemList(listTop)
         }
     }
 }
