@@ -11,9 +11,11 @@ interface TheMoviesApi {
     @GET("3/movie/popular?api_key=${API_KEY}&language=en-US&page=1")
     fun listPopular(): Call<MovieList>
 
-
-    @GET("{id}?api_key=${ApiConsts.API_KEY}&language=en-US&page=1")
+    @GET("3/movie/{$PATH_MOVIE_ID}?api_key=${API_KEY}&language=en-US")
     fun getMovieById(@Path(PATH_MOVIE_ID) id:Int): Call<MovieModel>
+
+    @GET("3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1")
+    fun topRated(): Call<MovieList>
 
 
 }

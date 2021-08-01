@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f5f2ff"
-        tools:context=".view.MainActivity">
+        tools:context=".view.DetailsActivity">
 
 
         <androidx.appcompat.widget.AppCompatImageView

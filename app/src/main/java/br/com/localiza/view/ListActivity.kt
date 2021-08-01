@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.localiza.databinding.ActivityListBinding
-import br.com.localiza.model.MovieList
-import br.com.localiza.model.MovieModel
 import br.com.localiza.model.MovieRepository
 
 class ListActivity : AppCompatActivity() {
@@ -28,12 +26,16 @@ class ListActivity : AppCompatActivity() {
 
     private fun setupList() {
         val adapterMovie = MovieAdapter {
-            val details = Intent(this, MainActivity::class.java)
+            val details = Intent(this, DetailsActivity::class.java)
             startActivity(details)
         }
-        binding.moviesListItens.adapter = adapterMovie
-        MovieRepository.getPopular { list ->
-            adapterMovie.addItemList(list)
+        binding.popularMoviesListItens.adapter = adapterMovie
+        MovieRepository.getPopular { listpop ->
+            adapterMovie.addItemList(listpop)
+        }
+        binding.topRatedMoviesListItens.adapter = adapterMovie
+        MovieRepository.topRated { listtop ->
+            adapterMovie.addItemList(listtop)
         }
     }
 }
