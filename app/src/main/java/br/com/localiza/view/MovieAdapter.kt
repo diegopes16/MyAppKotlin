@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 class MoviesViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 
-class MovieAdapter(val movieClickListener: () -> Unit) :
+class MovieAdapter(val movieClickListener: (Int) -> Unit) :
     RecyclerView.Adapter<MoviesViewHolder>() {
     val listMoviesItens: MutableList<MovieModel> = mutableListOf()
 
@@ -28,7 +28,8 @@ class MovieAdapter(val movieClickListener: () -> Unit) :
         Glide.with(holder.binding.root).load("https://image.tmdb.org/t/p/w500${item.poster_path}")
             .into(holder.binding.poster)
         holder.binding.itemBackground.setOnClickListener {
-            movieClickListener()
+            movieClickListener(item.id)
+//            movieClickListener()
         }
     }
 

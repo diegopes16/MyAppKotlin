@@ -14,11 +14,14 @@ class ListActivity : AppCompatActivity() {
 
         initLayout()
 
-        setupList()
+        setupListPopular()
 
         setupListTop()
 
+        setupListRecent()
+
     }
+
 
     private fun initLayout() {
         binding = ActivityListBinding.inflate(layoutInflater)
@@ -26,7 +29,7 @@ class ListActivity : AppCompatActivity() {
         setContentView(view)
     }
 
-    private fun setupList() {
+    private fun setupListPopular() {
         val adapterMovie = MovieAdapter {
             val details = Intent(this, DetailsActivity::class.java)
             startActivity(details)
@@ -38,15 +41,27 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setupListTop() {
-        val adapterMovie2 = MovieAdapter {
+        val adapterMovieTop = MovieAdapter {
             val details = Intent(this, DetailsActivity::class.java)
             startActivity(details)
         }
-        binding.topRatedMoviesListItens.adapter = adapterMovie2
+        binding.topRatedMoviesListItens.adapter = adapterMovieTop
         MovieRepository.topRated { listTop ->
-            adapterMovie2.addItemList(listTop)
+            adapterMovieTop.addItemList(listTop)
         }
     }
+
+    private fun setupListRecent() {
+        val adapterMovieRecent = MovieAdapter {
+            val details = Intent(this, DetailsActivity::class.java)
+            startActivity(details)
+        }
+        binding.upcomingMoviesListItens.adapter = adapterMovieRecent
+        MovieRepository.upcomingMovies { listUpcoming ->
+            adapterMovieRecent.addItemList(listUpcoming)
+        }
+    }
+
 }
 
 

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.ListActivity">
+        android:layout_height="wrap_content"
+        tools:context=".view.ListActivity"
+        android:background="@color/black">
+
 
 
         <TextView
@@ -19,8 +23,8 @@
             android:layout_marginTop="10sp"
             android:text="@string/filmes_populares"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="@color/green"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,10 +45,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="MAIS VOTADOS"
+            android:text="@string/mais_votados"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="@color/green"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/popularMoviesListItens" />
@@ -60,5 +64,29 @@
             tools:itemCount="20"
             tools:listitem="@layout/movie_item" />
 
+        <TextView
+            android:id="@+id/proximosLancamentosTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:text="@string/proximos_lancamentos"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topRatedMoviesListItens" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/upcomingMoviesListItens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@id/proximosLancamentosTitulo"
+            app:layout_constraintTop_toBottomOf="@id/proximosLancamentosTitulo"
+            tools:itemCount="20"
+            tools:listitem="@layout/movie_item" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
