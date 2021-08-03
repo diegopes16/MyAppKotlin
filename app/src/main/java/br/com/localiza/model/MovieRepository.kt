@@ -67,12 +67,12 @@ object MovieRepository {
         CoroutineScope(GlobalScope.coroutineContext).launch(Dispatchers.Main) {
             withContext(Dispatchers.IO) {
                 val call = moviesApi.getMovieById(id)
-                call.enqueue(object: Callback<MovieModel>{
+                call.enqueue(object : Callback<MovieModel> {
                     override fun onResponse(
                         call: Call<MovieModel>,
                         response: Response<MovieModel>
                     ) {
-                        callback(response.body()?: dummyMovie)
+                        callback(response.body() ?: dummyMovie)
                     }
 
                     override fun onFailure(call: Call<MovieModel>, t: Throwable) {
@@ -84,7 +84,9 @@ object MovieRepository {
         }
     }
 
-    val dummyMovie: MovieModel = MovieModel("",-1,"","")
+    val dummyMovie: MovieModel = MovieModel(
+        "Teste", 999, "", "", mutableListOf(), "", "", 0,
+    )
 }
 
 //class MeuCallBack(val callback: (List<MovieModel>)) : Callback<MovieList> {

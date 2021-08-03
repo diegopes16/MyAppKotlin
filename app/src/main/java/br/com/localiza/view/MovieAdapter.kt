@@ -29,7 +29,6 @@ class MovieAdapter(val movieClickListener: (Int) -> Unit) :
             .into(holder.binding.poster)
         holder.binding.itemBackground.setOnClickListener {
             movieClickListener(item.id)
-//            movieClickListener()
         }
     }
 

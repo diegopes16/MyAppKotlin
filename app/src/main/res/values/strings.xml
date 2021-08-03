@@ -11,4 +11,5 @@
     <string name="mais_votados">TOP RATED</string>
     <string name="proximos_lancamentos">UPCOMING</string>
     <string name="voltarButtonText">BACK</string>
+    <string name="overviewTitle">Overview:</string>
 </resources>

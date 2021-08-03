@@ -16,62 +16,63 @@
 
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f5f2ff"
             tools:context=".view.DetailsActivity">
 
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/poster_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/detailsPosterImage"
+                android:layout_width="match_parent"
+                android:outlineProvider="paddedBounds"
+                android:layout_height="450dp"
+                android:scaleType="fitXY"
                 android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/detailsPosterImage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/poster_id"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/loki_logo" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/title"
+                android:id="@+id/detailstitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingStart="15dp"
+                android:textAlignment="center"
+                android:padding="10sp"
                 android:text="@string/title"
                 android:textColor="@color/darkgreen"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/poster_id"
-                app:layout_constraintTop_toBottomOf="@id/poster_id" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailsPosterImage" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/yearMovie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="15dp"
-                android:paddingBottom="5dp"
+                android:padding="5sp"
                 android:text="@string/ano"
                 android:textColor="@color/darkgreen"
                 android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="@id/title"
-                app:layout_constraintTop_toBottomOf="@id/title" />
+                app:layout_constraintStart_toStartOf="@id/detailstitle"
+                app:layout_constraintTop_toBottomOf="@id/detailstitle" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sinopse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Sinopse:"
+                android:text="@string/overviewTitle"
                 android:textColor="@color/darkgreen"
                 android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/yearMovie"
-                app:layout_constraintTop_toBottomOf="@id/yearMovie" />
+                app:layout_constraintTop_toBottomOf="@id/detailsgenre" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/texto_sinopse"
@@ -87,52 +88,33 @@
                 app:layout_constraintStart_toStartOf="@id/sinopse"
                 app:layout_constraintTop_toBottomOf="@id/sinopse" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/genero_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:padding="3dp"
-                android:text="Genêro: "
-                android:textColor="@color/darkgreen"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/genero"
-                android:layout_width="wrap_content"
+                android:id="@+id/detailsgenre"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="3dp"
+                android:padding="5dp"
                 android:text="@string/genero"
                 android:textColor="@color/darkgreen"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@id/genero_title"
-                app:layout_constraintStart_toEndOf="@id/genero_title" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yearMovie"/>
+
+
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/duracao_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:text="Duração: "
-                android:textColor="@color/darkgreen"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/genero"
-                app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/duracao"
+                android:id="@+id/runtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
                 android:text="@string/duracao"
                 android:textColor="@color/darkgreen"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@id/duracao_title"
-                app:layout_constraintStart_toEndOf="@id/duracao_title" />
+                app:layout_constraintBottom_toBottomOf="@id/yearMovie"
+                app:layout_constraintStart_toEndOf="@id/yearMovie"
+                app:layout_constraintTop_toTopOf="@id/yearMovie"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/botao_voltar"
@@ -146,7 +128,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/duracao" />
+                app:layout_constraintTop_toBottomOf="@id/texto_sinopse" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
