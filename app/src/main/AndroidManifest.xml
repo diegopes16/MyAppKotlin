@@ -12,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
-        <activity android:name=".view.SearchListActivity" />
+        <activity android:name=".view.MainActivity"/>
         <activity android:name=".view.DetailsActivity" />
-        <activity android:name=".view.ListActivity">
+        <activity android:name=".view.ListActivity" />
+        <activity android:name=".view.SearchListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,5 @@
 package br.com.localiza.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.localiza.databinding.ActivityDetailsBinding
@@ -27,23 +26,18 @@ class DetailsActivity : AppCompatActivity() {
             bindingDetails.textoSinopse.text = item.overview
             Glide.with(bindingDetails.root).load("https://image.tmdb.org/t/p/w500${item.poster_path}").
             into(bindingDetails.detailsPosterImage)
-            bindingDetails.detailsgenre.text = item.genres.toString()
-            val runningTimeString = "${item.runtime/60}h and ${item.runtime%60} minutes"
+            bindingDetails.detailsgenre.text = item.genres[0].toString()
+            val runningTimeString = "${item.runtime/60}h ${item.runtime%60} min"
             bindingDetails.runtime.text = runningTimeString
-            bindingDetails.yearMovie.text = item.release_date
-
-
+            val yearMovieRelease:String = item.release_date.take(4)
+            bindingDetails.yearMovie.text = yearMovieRelease
 
         }
 
 
         bindingDetails.botaoVoltar.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
-//        Glide.with(bindingMain.root).load("https://image.tmdb.org/t/p/w500${item.poster_path}")
-//            .into(bindingMain.poster)
-
 
     }
 }

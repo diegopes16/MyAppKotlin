@@ -19,14 +19,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:queryHint="Buscar Filmes"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/searchButton"
+            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesquisar"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchMoviesList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/search_bar"
+            app:layout_constraintTop_toBottomOf="@id/searchButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             android:orientation="vertical"
+            tools:itemCount="4"
             app:spanCount="2"
             tools:listitem="@layout/movie_searchitem"
             android:visibility="visible"

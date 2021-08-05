@@ -3,10 +3,8 @@ package br.com.localiza.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import br.com.localiza.databinding.ActivityListBinding
 import br.com.localiza.model.MovieRepository
-import br.com.localiza.viewmodel.MovieListViewModel
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding

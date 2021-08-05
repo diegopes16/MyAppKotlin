@@ -1,8 +1,11 @@
 package br.com.localiza.view
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import br.com.localiza.R
 import br.com.localiza.databinding.MovieItemBinding
 import br.com.localiza.model.MovieModel
 import com.bumptech.glide.Glide
@@ -42,4 +45,11 @@ class MovieAdapter(val movieClickListener: (Int) -> Unit) :
         notifyDataSetChanged()
     }
 
+}
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
 }

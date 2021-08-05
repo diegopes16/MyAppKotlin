@@ -18,7 +18,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/searchItemBackground"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="250dp">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             app:flow_horizontalAlign="center"
-            android:padding="15dp"
+            android:padding="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

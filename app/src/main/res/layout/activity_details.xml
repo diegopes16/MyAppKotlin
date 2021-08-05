@@ -55,7 +55,8 @@
                 android:id="@+id/yearMovie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5sp"
+                android:padding="10sp"
+                android:layout_marginStart="5sp"
                 android:text="@string/ano"
                 android:textColor="@color/darkgreen"
                 android:textSize="30sp"
@@ -74,6 +75,7 @@
                 app:layout_constraintStart_toStartOf="@id/yearMovie"
                 app:layout_constraintTop_toBottomOf="@id/detailsgenre" />
 
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/texto_sinopse"
                 android:layout_width="0dp"
@@ -91,15 +93,16 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/detailsgenre"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="@string/genero"
                 android:textColor="@color/darkgreen"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/yearMovie"/>
+                app:layout_constraintStart_toEndOf="@id/yearMovie"
+                app:layout_constraintTop_toTopOf="@id/yearMovie"
+                app:layout_constraintEnd_toStartOf="@id/runtime"
+                app:layout_constraintBottom_toBottomOf="@id/yearMovie"/>
 
 
 
@@ -112,7 +115,7 @@
                 android:textColor="@color/darkgreen"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/yearMovie"
-                app:layout_constraintStart_toEndOf="@id/yearMovie"
+                app:layout_constraintStart_toEndOf="@id/detailsgenre"
                 app:layout_constraintTop_toTopOf="@id/yearMovie"
                 app:layout_constraintEnd_toEndOf="parent"/>
 

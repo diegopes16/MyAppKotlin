@@ -8,9 +8,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object MovieRepository {
-    val retrofit: Retrofit = Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://api.themoviedb.org/").build()
-    val moviesApi: TheMoviesApi = retrofit.create(TheMoviesApi::class.java)
+    private val retrofit: Retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl("https://api.themoviedb.org/")
+        .build()
+    private val moviesApi: TheMoviesApi = retrofit.create(TheMoviesApi::class.java)
 
     fun getPopular(callback: (List<MovieModel>) -> Unit) {
         CoroutineScope(GlobalScope.coroutineContext).launch(Dispatchers.Main) {
@@ -22,7 +24,7 @@ object MovieRepository {
                     }
 
                     override fun onFailure(call: Call<MovieList>, t: Throwable) {
-                        //TODO
+
                     }
                 })
             }
@@ -76,12 +78,32 @@ object MovieRepository {
                     }
 
                     override fun onFailure(call: Call<MovieModel>, t: Throwable) {
-                        TODO("Not yet implemented")
+
                     }
 
                 })
             }
         }
+
+    }
+
+    fun searchMovie(query: String, callback: (List<MovieModel>) -> Unit) {
+        CoroutineScope(GlobalScope.coroutineContext).launch(Dispatchers.Main) {
+            withContext(Dispatchers.IO) {
+                val call = moviesApi.searchMovie(searchqueryapi= query)
+                call.enqueue(object : Callback<MovieList> {
+                    override fun onResponse(call: Call<MovieList>, response: Response<MovieList>) {
+                        callback(response.body()?.results ?: mutableListOf())
+                    }
+
+                    override fun onFailure(call: Call<MovieList>, t: Throwable) {
+                        //TODO
+                    }
+
+                })
+            }
+        }
+
     }
 
     val dummyMovie: MovieModel = MovieModel(
