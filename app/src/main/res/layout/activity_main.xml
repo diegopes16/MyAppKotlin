@@ -19,7 +19,8 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WELCOME!"
+            android:text="WELCOME TO THE MOVIES APP"
+            android:padding="30dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"

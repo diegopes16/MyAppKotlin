@@ -21,9 +21,6 @@ interface TheMoviesApi {
     @GET("3/movie/top_rated?${DEFAULT_QUERY}")
     fun topRated(): Call<MovieList>
 
-//    @GET("3/search/movie?api_key=${API_KEY}&language=${LANGUAGE}&query={$BUSCA_STRING}&page=1&include_adult=false")
-//    fun searchMovie(@Path(BUSCA_STRING) txtBusca:String): Call<MovieList>
-
     @GET("3/search/movie")
     fun searchMovie(@Query("api_key") apiKey: String = API_KEY,
                     @Query("query") searchqueryapi: String,
